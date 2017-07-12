@@ -20,14 +20,14 @@ std::string reverseParentheses(std::string s) {
     string t;
     map <int, int> where;
     for (int i = 0; i < s.size(); i++) {
-      if (s[i] != ')' && s[i] != '(') {
-        t += s[i];
-        where[i] = t.size() - 1;
-      }
+        if (s[i] != ')' && s[i] != '(') {
+            t += s[i];
+            where[i] = t.size() - 1;
+         }
     }
     for (int i = 0; i < segments.size(); i++) {
-      int l = where[segments[i].second.first];
-      int r = where[segments[i].second.second];
+        int l = where[segments[i].second.first];
+        int r = where[segments[i].second.second];
     } 
     
     for (int i = 0; i < segments.size(); i++) {
