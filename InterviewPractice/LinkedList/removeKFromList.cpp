@@ -26,5 +26,5 @@ ListNode<int> * removeKFromList(ListNode<int> * l, int k) {
                currentNode = currentNode-> next;
           }
      }
-     return (l == NULL ? NULL : l);
+     return l;
 }
