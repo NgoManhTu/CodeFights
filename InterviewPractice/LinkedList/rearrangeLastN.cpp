@@ -5,7 +5,6 @@
 //   T value;
 //   ListNode *next;
 // };
-//
 ListNode<int> * rearrangeLastN(ListNode<int> * l, int n) {
     if (l == NULL) return NULL;
     vector <int> v;
