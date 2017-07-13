@@ -5,6 +5,8 @@
 //   T value;
 //   ListNode *next;
 // };
+
+// my solution
 ListNode<int> * rearrangeLastN(ListNode<int> * l, int n) {
     if (l == NULL) return NULL;
     vector <int> v;
@@ -30,4 +32,25 @@ ListNode<int> * rearrangeLastN(ListNode<int> * l, int n) {
     previousNode-> next = NULL;
     delete currrentNode;
     return res;
+}
+
+// ml9951's solution
+ListNode<int> * rearrangeLastN(ListNode<int> * l, int n) {
+    ListNode<int>* trailer = l;
+    ListNode<int>* ptr = l;
+    for(int i = 0; i < n; i++){
+        ptr = ptr->next;
+    }
+    
+    if(n == 0 || ptr == NULL)
+        return l;
+    
+    while(ptr->next){
+        ptr = ptr->next;
+        trailer = trailer->next;
+    }
+    ListNode<int>* result = trailer->next;
+    trailer->next = NULL;
+    ptr->next = l;
+    return result;
 }
