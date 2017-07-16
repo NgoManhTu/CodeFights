@@ -24,7 +24,7 @@ int largestFullBinaryTree(std::vector<int> parent) {
           secondMax = curMax;
         }
       }
-      if (firstMax == -1) {
+      if (secondMax == -1) {
         return 1;
       }
       int result = 1 + firstMax + secondMax;
