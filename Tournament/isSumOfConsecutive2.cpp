@@ -1,14 +1,14 @@
 int isSumOfConsecutive2(int n) {
-  int result = 0;
-  for (int start = 1; start < n; start++) {
-    int number = n, subtrahend = start;
-    while (number > 0) {
-      number -= subtrahend;
-      subtrahend++;
+  int res = 0;
+  for (int i = 1; i < n; i++) {
+    int m = n, j = i;
+    while (m > 0) {
+      m -= j;
+      j++;
     }
-    if (!number) {
-      result++;
+    if (!m) {
+      res++;
     }
   }
-  return result;
+  return res;
 }
