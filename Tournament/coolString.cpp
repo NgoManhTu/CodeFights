@@ -1,17 +1,42 @@
-bool islower(char x) {
-    return ('a' <= x && x <= 'z');
-}
-
-bool isupper(char x) {
-    return ('A' <= x && x <= 'Z');
-}
-
 bool coolString(std::string inputString) {
-    inputString += '.';
-    for (int i = 0; i < inputString.size() - 1; i++) {
-        if (!(islower(inputString[i]) || isupper(inputString[i]))) return false;
-        if (islower(inputString[i]) && islower(inputString[i + 1])) return false;
-        if (isupper(inputString[i]) && isupper(inputString[i + 1])) return false;
+
+  struct Helper {
+    bool isLowercase(char symbol) {
+      if ('a' <= symbol && symbol <= 'z') {
+        return true;
+      }
+      return false;
     }
-    return true;
+
+    bool isUppercase(char symbol) {
+      if ('A' <= symbol && symbol <= 'Z') {
+        return true;
+      }
+      return false;
+    }
+  };
+  Helper h;
+
+  bool firstIsLowercase = h.isLowercase(inputString[0]);
+  bool firstIsUppercase = h.isUppercase(inputString[0]);
+
+  if (!(firstIsLowercase || firstIsUppercase)) {
+    return false;
+  }
+
+  for (int i = 1; i < inputString.size(); i++) {
+    if (i % 2 == 1) {
+      if (h.isLowercase(inputString[i]) == firstIsLowercase || h.isUppercase(inputString[i]) == firstIsUppercase) {
+        return false;
+      }
+    }
+    else {
+      if (h.isLowercase(inputString[i]) != firstIsLowercase ||
+          h.isUppercase(inputString[i]) != firstIsUppercase) {
+        return false;
+      }
+    }
+  }
+
+  return true;
 }
