@@ -12,5 +12,5 @@ bool equationTemplate(std::vector<int> values) {
             }
         }
     }
-    return falsel
+    return false;
 }
