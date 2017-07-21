@@ -1,4 +1,4 @@
-int higherVersion2(std::listNumbering s1, std::listNumbering s2) {
+int higherVersion2(std::string s1, std::string s2) {
     vector <int> listNumber1, listNumber2;
     s1 += '.', s2 += '.';
     int number = 0;
