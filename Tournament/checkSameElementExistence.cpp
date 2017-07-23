@@ -4,7 +4,7 @@ bool checkSameElementExistence(std::vector<int> arr1, std::vector<int> arr2) {
         exist[arr1[i]] = true;
     }
     for (int i = 0; i < arr2.size(); i++) {
-        if (exist[arr2[i])) return true;
+        if (exist[arr2[i]]) return true;
     }
     return false;
 }
