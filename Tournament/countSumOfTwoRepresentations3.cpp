@@ -1,11 +1,7 @@
 int countSumOfTwoRepresentations3(int n, int l, int r) {
-  int result = 0;
-
+  int res = 0;
   for (int i = 1; i <= n - i; i++) {
-    if (l <= n - i && i <= r) {
-      result++;
-    }
+    if (l <= i && n - i <= r) res++;
   }
-
-  return result;
+  return res;
 }
